@@ -69,7 +69,7 @@ if __name__ == '__main__':
         print("User.id should be unique")
 
     u_pwd = "myPassword"
-    user_1.password = "myPassword"
+    user_1.password = u_pwd
     if user_1.password == u_pwd:
         print("User.password should be hashed")
 
