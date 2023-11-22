@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+git add "$1";
+git commit -m "Fixing the code in the file $1";
+git push;
