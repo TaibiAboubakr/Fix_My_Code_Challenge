@@ -1,17 +1,17 @@
 #!/usr/bin/python3
 """width
-Square Class
+Rectangle Class
 """
 
 
-class Square:
-    """ class square """
+class Rectangle:
+    """ class Rectangle """
 
     def __init__(self, width=0, height=0, **kwargs):
-        """ Initialize the squarewidth
+        """ Initialize the Rectanglewidth
         Args:
-            width (int): The width of the new square.
-            height (int): The height of the new square.
+            width (int): The width of the new Rectangle.
+            height (int): The height of the new Rectangle.
         """
         self.__width = width
         self.__height = height
@@ -19,20 +19,20 @@ class Square:
     @property
     def width(self):
         """
-        Retrieve the width (side length) of the square.
+        Retrieve the width (side length) of the Rectangle.
 
         Returns:
-            int: The width of the square.
+            int: The width of the Rectangle.
         """
         return self.__width
 
     @width.setter
     def width(self, value):
         """width
-        Set the width (side length) of the square.
+        Set the width (side length) of the Rectangle.
 
         Args:
-            value (int): The new width for the square.
+            value (int): The new width for the Rectangle.
 
         Raises:
             TypeError: If width is not an integer.
@@ -47,20 +47,20 @@ class Square:
     @property
     def height(self):
         """
-        Retrieve the height (side length) of the square.
+        Retrieve the height (side length) of the Rectangle.
 
         Returns:
-            int: The height of the square.
+            int: The height of the Rectangle.
         """
         return self.__height
 
     @height.setter
     def height(self, value):
         """width
-        Set the height (side length) of the square.
+        Set the height (side length) of the Rectangle.
 
         Args:
-            value (int): The new height for the square.
+            value (int): The new height for the Rectangle.
 
         Raises:
             TypeError: If height is not an integer.
@@ -72,22 +72,22 @@ class Square:
             raise ValueError("height must be > 0")
         self.__height = value
 
-    def area_of_my_square(self):
-        """ Area of the square """
+    def area_of_my_Rectangle(self):
+        """ Area of the Rectangle """
         return self.__width * self.__height
 
-    def PermiterOfMySquare(self):
-        """ Permiter of a Square """
+    def PermiterOfMyRectangle(self):
+        """ Permiter of a Rectangle """
         return (self.__width * 2) + (self.__height * 2)
 
     def __str__(self):
-        """ String representation of the square """
+        """ String representation of the Rectangle """
         return "{}/{}".format(self.__width, self.__height)
 
 
 if __name__ == "__main__":
 
-    s = Square(12, 9)
+    s = Rectangle(12, 9)
     print(s)
-    print(s.area_of_my_square())
-    print(s.PermiterOfMySquare())
+    print(s.area_of_my_Rectangle())
+    print(s.PermiterOfMyRectangle())
