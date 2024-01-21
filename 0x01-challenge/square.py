@@ -1,93 +1,64 @@
 #!/usr/bin/python3
-"""width
-Rectangle Class
+"""size
+Square Class
 """
 
 
-class Rectangle:
-    """ class Rectangle """
+class Square:
+    """ class square """
 
-    def __init__(self, width=0, height=0, **kwargs):
-        """ Initialize the Rectanglewidth
+    def __init__(self, size=0, **kwargs):
+        """ Initialize the squaresize
         Args:
-            width (int): The width of the new Rectangle.
-            height (int): The height of the new Rectangle.
+            size (int): The size of the new square.
+            height (int): The height of the new square.
         """
-        self.__width = width
-        self.__height = height
+        self.__size = size
 
     @property
-    def width(self):
+    def size(self):
         """
-        Retrieve the width (side length) of the Rectangle.
+        Retrieve the size (side length) of the square.
 
         Returns:
-            int: The width of the Rectangle.
+            int: The size of the square.
         """
-        return self.__width
+        return self.__size
 
-    @width.setter
-    def width(self, value):
-        """width
-        Set the width (side length) of the Rectangle.
+    @size.setter
+    def size(self, value):
+        """size
+        Set the size (side length) of the square.
 
         Args:
-            value (int): The new width for the Rectangle.
+            value (int): The new size for the square.
 
         Raises:
-            TypeError: If width is not an integer.
-            ValueError: If width is less than 0.
+            TypeError: If size is not an integer.
+            ValueError: If size is less than 0.
         """
         if type(value) is not int:
-            raise TypeError("width must be an integer")
+            raise TypeError("size must be an integer")
         if value < 0:
-            raise ValueError("width must be > 0")
-        self.__width = value
+            raise ValueError("size must be > 0")
+        self.__size = value
 
-    @property
-    def height(self):
-        """
-        Retrieve the height (side length) of the Rectangle.
+    def area_of_my_square(self):
+        """ Area of the square """
+        return self.__size * self.__size
 
-        Returns:
-            int: The height of the Rectangle.
-        """
-        return self.__height
-
-    @height.setter
-    def height(self, value):
-        """width
-        Set the height (side length) of the Rectangle.
-
-        Args:
-            value (int): The new height for the Rectangle.
-
-        Raises:
-            TypeError: If height is not an integer.
-            ValueError: If height is less than 0.
-        """
-        if type(value) is not int:
-            raise TypeError("height must be an integer")
-        if value < 0:
-            raise ValueError("height must be > 0")
-        self.__height = value
-
-    def area_of_my_Rectangle(self):
-        """ Area of the Rectangle """
-        return self.__width * self.__height
-
-    def PermiterOfMyRectangle(self):
-        """ Permiter of a Rectangle """
-        return (self.__width * 2) + (self.__height * 2)
+    def PermiterOfMySquare(self):
+        """ Permiter of a Square """
+        return (self.__size * 4)
 
     def __str__(self):
-        """ String representation of the Rectangle """
-        return "{}/{}".format(self.__width, self.__height)
+        """ String representation of the square """
+        return "{}/{}".format(self.__size, self.__size)
 
 
 if __name__ == "__main__":
 
-    s = Rectangle(12, 9)
+    s = Square(12)
     print(s)
-    print(s.area_of_my_Rectangle())
-    print(s.PermiterOfMyRectangle())
+    print(s.area_of_my_square())
+    print(s.PermiterOfMySquare())
