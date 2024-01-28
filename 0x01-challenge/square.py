@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""width
-Square Class
+"""Square Class
 """
 
 
