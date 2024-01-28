@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""size
+"""width
 Square Class
 """
 
@@ -7,58 +7,87 @@ Square Class
 class Square:
     """ class square """
 
-    def __init__(self, size=0, **kwargs):
-        """ Initialize the squaresize
+    def __init__(self, width=0, height=0, **kwargs):
+        """ Initialize the squarewidth
         Args:
-            size (int): The size of the new square.
+            width (int): The width of the new square.
             height (int): The height of the new square.
         """
-        self.__size = size
+        self.__width = width
+        self.__height = height
 
     @property
-    def size(self):
+    def width(self):
         """
-        Retrieve the size (side length) of the square.
+        Retrieve the width (side length) of the square.
 
         Returns:
-            int: The size of the square.
+            int: The width of the square.
         """
-        return self.__size
+        return self.__width
 
-    @size.setter
-    def size(self, value):
-        """size
-        Set the size (side length) of the square.
+    @width.setter
+    def width(self, value):
+        """width
+        Set the width (side length) of the square.
 
         Args:
-            value (int): The new size for the square.
+            value (int): The new width for the square.
 
         Raises:
-            TypeError: If size is not an integer.
-            ValueError: If size is less than 0.
+            TypeError: If width is not an integer.
+            ValueError: If width is less than 0.
         """
         if type(value) is not int:
-            raise TypeError("size must be an integer")
+            raise TypeError("width must be an integer")
         if value < 0:
-            raise ValueError("size must be > 0")
-        self.__size = value
+            raise ValueError("width must be > 0")
+        self.__width = value
+
+    @property
+    def height(self):
+        """
+        Retrieve the height (side length) of the square.
+
+        Returns:
+            int: The height of the square.
+        """
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        """width
+        Set the height (side length) of the square.
+
+        Args:
+            value (int): The new height for the square.
+
+        Raises:
+            TypeError: If height is not an integer.
+            ValueError: If height is less than 0.
+        """
+        if type(value) is not int:
+            raise TypeError("height must be an integer")
+        if value < 0:
+            raise ValueError("height must be > 0")
+        self.__height = value
 
     def area_of_my_square(self):
         """ Area of the square """
-        return self.__size * self.__size
+        return self.__width * self.__height
 
     def PermiterOfMySquare(self):
         """ Permiter of a Square """
-        return (self.__size * 4)
+        return (self.__width * 2) + (self.__height * 2)
 
     def __str__(self):
         """ String representation of the square """
-        return "{}/{}".format(self.__size, self.__size)
+        return "{}/{}".format(self.__width, self.__height)
 
 
 if __name__ == "__main__":
 
-    s = Square(12)
+    s = Square(12, 9)
     print(s)
     print(s.area_of_my_square())
     print(s.PermiterOfMySquare())
