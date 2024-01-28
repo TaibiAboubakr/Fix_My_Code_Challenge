@@ -6,14 +6,14 @@
 class Square:
     """ class square """
 
-    def __init__(self, width=0, height=0, **kwargs):
+    def __init__(self, *args, **kwargs):
         """ Initialize the squarewidth
         Args:
             width (int): The width of the new square.
             height (int): The height of the new square.
         """
-        self.__width = width
-        self.__height = height
+        for key, value in kwargs.items():
+            setattr(self, key, value)
 
     @property
     def width(self):
