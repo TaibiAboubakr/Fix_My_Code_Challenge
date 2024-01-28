@@ -4,14 +4,16 @@ Web server
 """
 from api.v1.views import app_views
 from flask import Flask, jsonify, make_response
-from api.v1.views.index import status 
+from api.v1.views.index import status
 
 app = Flask(__name__)
 app.register_blueprint(app_views)
 
+
 @app.route("/")
 def home():
     return status()
+
 
 @app.errorhandler(404)
 def not_found(error):
