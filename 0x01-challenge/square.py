@@ -14,8 +14,12 @@ class Square:
             width (int): The width of the new square.
             height (int): The height of the new square.
         """
-        for key, value in kwargs.items():
-            setattr(self, key, value)
+        if kwargs:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+        else:
+            self.width = 0 
+            self.height = 0
 
     @property
     def width(self):
