@@ -1,12 +1,19 @@
 #!/usr/bin/python3
+"""Square Class
+"""
 
 
 class square:
+    """ Class square """
     width = 0
     height = 0
 
-
     def __init__(self, *args, **kwargs):
+        """ Initialize the squarewidth
+        Args:
+            width (int): The width of the new square.
+            height (int): The height of the new square.
+        """
         for key, value in kwargs.items():
             setattr(self, key, value)
 
@@ -81,7 +88,7 @@ class square:
 
 if __name__ == "__main__":
 
-    s = square(12, 9)
+    s = Square(12, 9)
     print(s)
     print(s.area_of_my_square())
     print(s.PermiterOfMySquare())
